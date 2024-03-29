@@ -1,1 +1,312 @@
-Pineapple = DevOps
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Pineapple DevOps - Experiment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dive into the world of DevOps with Pineapple DevOps Experiment. Explore insightful blogs, engaging podcasts, and expert advice designed to elevate your DevOps journey, from beginner tips to advanced strategies.">
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      
+<!--<script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>-->
+<style>
+  #retainable-rss-embed {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Creates a 4-column layout */
+      grid-auto-rows: minmax(100px, auto); /* Adjust row height as needed */
+      gap: 10px; /* Adjust space between items */
+      /* Additional styling here */
+  }
+  
+  #retainable-rss-embed > div {
+      /* Style for each item, adjust as needed */
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      /* Ensure items do not stretch too much in larger displays */
+      max-width: 100%;
+  }
+  
+  @media (max-width: 1024px) {
+      #retainable-rss-embed {
+          grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+      }
+  }
+  
+  @media (max-width: 768px) {
+      #retainable-rss-embed {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile devices */
+      }
+  }
+  </style>
+      <script>
+        $(document).ready(function() {
+          // Fetch the Medium RSS feed using AJAX
+          $.ajax({
+            url: 'https://api.rss2json.com/v1/api.json',
+            method: 'GET',
+            dataType: 'json',
+            data: {
+              rss_url: $('#retainable-rss-embed').data('rss')
+            },
+            success: function(response) {
+              if (response.status === 'ok') {
+                // Display the titles, images, and "Read More" buttons
+                displayTitlesAndImages(response.items);
+              } else {
+                console.error('Failed to fetch the Medium RSS feed.');
+              }
+            },
+            error: function() {
+              console.error('Error fetching the Medium RSS feed.');
+            }
+          });
+    
+          // Function to display titles, images, and "Read More" buttons in the specified container
+          function displayTitlesAndImages(items) {
+            var container = $('#retainable-rss-embed');
+    
+            // Create a new container for titles, images, and "Read More" buttons
+            var contentContainer = $('<div>').attr('data-maxcols', '4');
+    
+            // Iterate through the items and display titles, images, and "Read More" buttons
+            items.forEach(function(item) {
+              var title = item.title;
+              var image = item.thumbnail || ''; // Check if thumbnail property exists
+              var link = item.link;
+    
+              // Create a new container for each article
+              var articleContainer = $('<div>').addClass('article-container');
+    
+              // Create a new h2 element for the extracted title
+              var titleElement = $('<h2>').text(title);
+    
+              // Create an image element for the extracted image
+              var imageElement = $('<img>').attr('src', image);
+    
+              // Create a "Read More" button with a link to the full article
+              var readMoreButton = $('<a>').attr('href', link).addClass('btn btn-secondary').text('Read More');
+    
+              // Append the title, image, and "Read More" button elements to the article container
+              articleContainer.append(titleElement);
+              articleContainer.append(imageElement);
+              articleContainer.append(readMoreButton);
+    
+              // Append the article container to the main content container
+              contentContainer.append(articleContainer);
+            });
+    
+            // Replace the original content with the extracted titles, images, and "Read More" buttons
+            container.html(contentContainer);
+          }
+        });
+      </script>
+    
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Pineapple DevOps</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+            <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>Pipeline Pine</span></a></li>
+	        <!--  <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>-->
+	          <li class="nav-item"><a href="#podcast-section" class="nav-link"><span>Podcast</span></a></li>
+	          <!--<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>-->
+	          <!--<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>-->
+
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	      <div class="slider-item ">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
+	          		<div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<!--<span class="subheading">Hello!</span>-->
+			            <h1 class="mb-4 mt-3">The <span>Pineapple DevOps </span>Experiment...</h1>
+			            <h2 class="mb-4">Curious about DevOps and want to learn more? Listen to our Podcasts and Blogs.</h2>
+			            <p><a href="#podcast-section" class="btn btn-primary py-3 px-4">Podcast</a> <a href="index.html" class="btn btn-white btn-outline-white py-3 px-4">Blog</a></p>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+    </section>
+    <!--RSS-->
+    <section class="ftco-section" id="blog-section" style="background-image: url(images/bg_1.jpg)" id="contact-section">
+      <div id="retainable-rss-embed" 
+        data-rss="https://medium.com/feed/@pineappledevops" data-maxcols="4"></div>
+        
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex">
+    			<div class="col-md-6 col-lg-5 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/about.png);">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		          	
+		            <h2 class="mb-4">Pipeline Pine</h2>
+		            <p>Born in an office in London (UK), 'Pipeline Pine' is pure DevOps at the core and likes to embody the spirit of DevOps in its many forms. Creating Podcasts and Blogs just for fun. Life is an experiment...</p>
+		            <ul class="about-info mt-4 px-md-0 px-2">
+		            	<li class="d-flex"><span>Name:</span> <span>Pipeline Pine</span></li>
+		            	<li class="d-flex"><span>Skills:</span> <span>CI/CD</span></li>
+		            	<li class="d-flex"><span>Power Level:</span> <span>Azure, AWS & GCP</span></li>
+						<li class="d-flex"><span>Favourite Saying:</span> <span>Pull, Dont Push that Old Git.</span></li>
+		            </ul>
+		          </div>
+		        </div>
+				<p>To get to know the voice behind Pipeline Pine:</p>
+                <p><a href="https://www.linkedin.com/in/jamestoleary/" class="btn btn-primary py-3 px-3">Link</a></p>
+              </div>
+	          </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section" id="podcast-section">
+    	<div class="container">
+    		<div class="row justify-content-center py-5 mt-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	
+            <h2 class="mb-4">Podcast</h2>
+            <p>Do you want to learn and hear about DevOps in small 'Byte' suzed listening? promise its long enough to learn but not enough to put you to sleep.  If this sounds good then head over to Spotify to follow and hear past episodes.  Check out the latest offering below:</p>
+			<p><a href="https://open.spotify.com/show/1J4J9S6nC05TVlyquU9WbF?si=01f9e716e8da4756" class="btn btn-primary py-3 px-3">Spotify</a></p> 
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/72ZQzyRn2TLDvtmeun3IDB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+     </div>
+        </div>
+      </section>
+
+
+
+
+
+    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)" id="contact-section">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>Who is behind the <span>Pineapple DevOps</span>?</h2>
+						<p>Hi, im James, currently a Principle DevOps Consultant. If you'd like to know more, please head over to my linkedin page to find out more, connect and follow along.</p>
+						<p class="mb-0"><a href="https://www.linkedin.com/in/jamestoleary/" class="btn btn-primary py-3 px-5">Linkedin</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+             <!-- <h2 class="ftco-heading-2">About</h2>-->
+            <!--  <p>To find out more about the voice and writer, check out my linkedin profile.</p>-->
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="https://www.linkedin.com/in/jamestoleary/"><span class="icon-linkedin"></span></a></li>
+                <!--<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <!--<h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+              </ul>-->
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <!--<h2 class="ftco-heading-2">Services</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>
+              </ul>-->
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	               <!-- <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>-->
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">FORM</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>Its not Copyright &copy;<script>document.write(new Date().getFullYear());</script> But if you like the above please share.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+  </body>
+</html>
