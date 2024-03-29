@@ -15,103 +15,8 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      
-<!--<script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>-->
-<style>
-  #retainable-rss-embed {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* Creates a 4-column layout */
-      grid-auto-rows: minmax(100px, auto); /* Adjust row height as needed */
-      gap: 10px; /* Adjust space between items */
-      /* Additional styling here */
-  }
-  
-  #retainable-rss-embed > div {
-      /* Style for each item, adjust as needed */
-      border: 1px solid #ccc;
-      padding: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      /* Ensure items do not stretch too much in larger displays */
-      max-width: 100%;
-  }
-  
-  @media (max-width: 1024px) {
-      #retainable-rss-embed {
-          grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
-      }
-  }
-  
-  @media (max-width: 768px) {
-      #retainable-rss-embed {
-          grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile devices */
-      }
-  }
-  </style>
-      <script>
-        $(document).ready(function() {
-          // Fetch the Medium RSS feed using AJAX
-          $.ajax({
-            url: 'https://api.rss2json.com/v1/api.json',
-            method: 'GET',
-            dataType: 'json',
-            data: {
-              rss_url: $('#retainable-rss-embed').data('rss')
-            },
-            success: function(response) {
-              if (response.status === 'ok') {
-                // Display the titles, images, and "Read More" buttons
-                displayTitlesAndImages(response.items);
-              } else {
-                console.error('Failed to fetch the Medium RSS feed.');
-              }
-            },
-            error: function() {
-              console.error('Error fetching the Medium RSS feed.');
-            }
-          });
-    
-          // Function to display titles, images, and "Read More" buttons in the specified container
-          function displayTitlesAndImages(items) {
-            var container = $('#retainable-rss-embed');
-    
-            // Create a new container for titles, images, and "Read More" buttons
-            var contentContainer = $('<div>').attr('data-maxcols', '4');
-    
-            // Iterate through the items and display titles, images, and "Read More" buttons
-            items.forEach(function(item) {
-              var title = item.title;
-              var image = item.thumbnail || ''; // Check if thumbnail property exists
-              var link = item.link;
-    
-              // Create a new container for each article
-              var articleContainer = $('<div>').addClass('article-container');
-    
-              // Create a new h2 element for the extracted title
-              var titleElement = $('<h2>').text(title);
-    
-              // Create an image element for the extracted image
-              var imageElement = $('<img>').attr('src', image);
-    
-              // Create a "Read More" button with a link to the full article
-              var readMoreButton = $('<a>').attr('href', link).addClass('btn btn-secondary').text('Read More');
-    
-              // Append the title, image, and "Read More" button elements to the article container
-              articleContainer.append(titleElement);
-              articleContainer.append(imageElement);
-              articleContainer.append(readMoreButton);
-    
-              // Append the article container to the main content container
-              contentContainer.append(articleContainer);
-            });
-    
-            // Replace the original content with the extracted titles, images, and "Read More" buttons
-            container.html(contentContainer);
-          }
-        });
-      </script>
-    
 
   </head>
 
@@ -162,9 +67,20 @@
 	      </div>
     </section>
     <!--RSS-->
-    <section class="ftco-section" id="blog-section" style="background-image: url(images/bg_1.jpg)" id="contact-section">
-      <div id="retainable-rss-embed" 
-        data-rss="https://medium.com/feed/@pineappledevops" data-maxcols="4"></div>
+    <section class="ftco-section" id="blog-section">
+      <div class="container">
+    		<div class="row justify-content-center py-5 mt-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	
+            <h2 class="mb-4">Blog</h2>
+            <p>All the Blogs are now on Medium, So head over there to read and listen!</p>
+            <a href="https://medium.com/the-pineapple-devops-experiment/" target="_blank">
+              <img src="images/medium.png" alt="The Pineapple DevOps Experiement Blog">
+            </a>
+            
+</div>
+        </div>
+      </section>
         
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
     	<div class="container">
